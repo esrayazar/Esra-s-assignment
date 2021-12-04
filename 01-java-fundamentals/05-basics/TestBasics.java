@@ -30,6 +30,9 @@ public class TestBasics {
         //Max, Min, Average
         System.out.println(tester.maxMinAverage(testintarray));
 
+        //Shifting the Values in the Array
+        tester.shiftingValues(testintarray);
+
 
 
     }

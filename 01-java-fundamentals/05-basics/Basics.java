@@ -91,5 +91,18 @@ public class Basics {
 
     }
 
+    public void shiftingValues(int arr[]){
+        ArrayList solution = new ArrayList<>();
+        if (arr.length==0)
+        System.out.println("array is empty");
+        else if (arr.length==1)
+        solution.add(0);
+        else {
+            for(int i= 1; i<arr.length; i++) solution.add(arr[i]);
+            solution.add(0);
+        }
+        System.out.println(solution);
+    }
+
 
 }
