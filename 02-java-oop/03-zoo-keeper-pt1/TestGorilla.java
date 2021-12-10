@@ -7,7 +7,7 @@ public class TestGorilla {
         sweet.eatBananas();
         sweet.eatBananas();
         sweet.climb();
-        displayEnergy();
+        sweet.displayEnergy();
 
         
     }
