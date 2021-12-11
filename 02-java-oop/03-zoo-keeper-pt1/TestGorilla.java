@@ -1,6 +1,8 @@
 public class TestGorilla {
     public static void main(String[] args) {
-        Gorilla sweet = new Gorilla();
+        Gorilla sweet1 = new Gorilla();
+        Gorilla sweet=new Gorilla(500);
+        sweet1.displayEnergy();
         sweet.throwSomething();
         sweet.throwSomething();
         sweet.throwSomething();

@@ -1,7 +1,10 @@
 public class Gorilla extends Mammal {
-    // public Gorilla(int energyLevel){
-    //     super(energyLevel);
-    // }
+    public Gorilla(){
+        super();
+    }
+    public Gorilla(int energyLevel){
+        super(energyLevel);
+    }
     public void throwSomething(){
         System.out.println("The gorilla has thrown something");
         this.energyLevel -= 5;
