@@ -1,8 +1,9 @@
-public class Bat {
-    public int energyLevel = 300;
+public class Bat extends Mammal {
+    //public int energyLevel = 300;
 
-    public Bat(int energyLevel){
-        this.energyLevel = energyLevel;
+    public Bat(int el){
+        // this.displayEnergy = energyLevel;
+        super(el);
     }
     public void fly(){
         this.energyLevel -=50;
