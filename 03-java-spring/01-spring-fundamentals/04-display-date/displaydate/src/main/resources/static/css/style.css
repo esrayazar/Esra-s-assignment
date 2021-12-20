@@ -1,4 +1,13 @@
 @charset "UTF-8";
 .date{
-	color:blue
+	color:blue;
+	text-align:center;
+}
+.time{
+	color:green;
+	text-align:center;
+	
+}
+.template{
+	text-align:center;
 }
