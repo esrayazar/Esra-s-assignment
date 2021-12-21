@@ -5,12 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Ninja Gold</title>
 <link rel= "stylesheet" href="/css/style.css">
 </head>
+<c:out value ="${awesomePerson}"/>
 <body>
 <div class ="container">
-<p>Your Gold:0 </p>
+<p>Your Gold:<c:out value ="${totalGold}"/> </p>
 
 <div class="building">
 <form method= "POST" action="/findGold">
@@ -47,9 +48,24 @@
 <button>Find Gold</button>
 </form>
 </div>
+
+<h2>Activities</h2>
+<div class = "activities">
+<c:forEach items= "${activities}" var ="act">
+<c:choose>
+<c:when test = "${act.contains('ouch')}">
+<p class= "red">${act}</p>
+</c:when>
+<c:otherwise>
+<p class ="green" > ${act} </p>
+</c:otherwise>
+</c:choose>
+</c:forEach>
+
+
+</div>
 </div>
 
 
-<%-- <c:out value ="${code here}"/> --%>
 </body>
 </html>
