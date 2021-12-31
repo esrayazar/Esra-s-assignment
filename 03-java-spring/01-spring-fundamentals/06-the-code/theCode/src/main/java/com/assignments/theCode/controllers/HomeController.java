@@ -10,6 +10,7 @@ public class HomeController {
 	public String code() {
 		return "index.jsp";
 	}
+	
 	@PostMapping("/")
 	public String checkCode(String userInput) {
 		System.out.println("code is here " + userInput);
