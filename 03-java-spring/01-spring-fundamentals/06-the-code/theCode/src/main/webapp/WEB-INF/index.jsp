@@ -8,6 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>What is the code ?</h2>
+<form action="/" method="post">
+<input type ="text" name="codeName">
+<button>Try Code</button>
+
+</form>
 
 </body>
 </html>
