@@ -15,14 +15,16 @@ public class HomeController {
 	}
 	
 	@PostMapping("/")
-	public String checkCode(String userInput, Model model) {
+	public String checkCode(String userInput, Model model, HttpSession session) {
 		System.out.println("code is here " + userInput);
 		String secret = "bushido";
 		if(userInput.equals(secret)) {
 			// matched - route to secret page
+			session.setAttribute("authentication","okey");
 			return "redirect:/code";
 		} else {
 			// wrong: display error message on '/' 
+			session.setAttribute("authentication","wrong");
 			model.addAttribute("error", "error");
 			return "index.jsp";
 		}
