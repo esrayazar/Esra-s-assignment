@@ -1,5 +1,7 @@
 package com.assignments.theCode.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,8 +30,13 @@ public class HomeController {
 	}
 	
 	@GetMapping("/code")
-	public String secretPage() {
-		return "secretPage.jsp";
+	public String secretPage(HttpSession session) {
+		if (session.getAttribute("authentication") == "okey") {
+			return "secretPage.jsp";
+		}else {
+			return "unauthorized.jsp";
+		}
+		
 	}
 
 

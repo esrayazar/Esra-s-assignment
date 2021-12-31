@@ -10,6 +10,9 @@
 <body>
 <h2>What is the code ?</h2>
 <form action="/" method="post">
+<c:if test = "${error=='error'}">
+         <p style ="color:red;">You must train harder<p>
+      </c:if>
 <input type ="text" name="userInput">
 <button>Try Code</button>
 
