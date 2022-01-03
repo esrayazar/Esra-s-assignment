@@ -10,3 +10,9 @@
 	display:flex;
 	justify-content: space-around
 }
+
+.assignment {
+	display: flex;
+    justify-content: flex-start;
+    margin-left: 16%;
+}

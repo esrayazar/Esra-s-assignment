@@ -21,7 +21,8 @@
 </div>
 </div>
 <div class="textarea">
-<textarea rows="15" cols="70"></textarea>
+
+<textarea rows="15" cols="70"><c:out value ="${content}"/></textarea>
 </div>
 </body>
 </html>

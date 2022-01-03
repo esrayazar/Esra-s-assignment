@@ -20,8 +20,12 @@
 <a href= "/m/26/0483/2342">Binary</a>
 </div>
 </div>
+<div class="assignment">
+<input type="checkbox"> Assignment Completed.
+</div>
 <div class="textarea">
-<textarea rows="15" cols="70"></textarea>
+
+<textarea rows="15" cols="70"><c:out value ="${content}"/></textarea>
 </div>
 </body>
 </html>
