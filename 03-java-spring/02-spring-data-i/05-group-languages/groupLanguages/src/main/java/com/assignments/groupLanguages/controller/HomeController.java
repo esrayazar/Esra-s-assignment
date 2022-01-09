@@ -3,6 +3,7 @@ package com.assignments.groupLanguages.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -27,6 +28,14 @@ public class HomeController {
         //name=Esra&creator=Esra+Yazar&version=1
         return "redirect:/languages";
         
+    }
+  //shows language details
+    @GetMapping("/languages/{id}")
+    public String getLanguagesid(@PathVariable("id") Long id,Model model) {
+        System.out.println("languageId = "+ id);
+//        Language language = languageService.getLanguageById(id);
+//        model.addAttribute("language", language);
+        return "details.jsp";
     }
 	
 	
