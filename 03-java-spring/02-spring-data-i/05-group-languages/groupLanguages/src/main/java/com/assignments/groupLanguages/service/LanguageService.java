@@ -20,5 +20,14 @@ public class LanguageService {
 	public List<Language> getAllLanguages(){
 		return languageRepository.findAll();
 	}
+	
+public Language getLanguageById(Long id) {
+		
+		return languageRepository.findById(id).get();
+	}
+	
+	public void delete(Long id) {
+		languageRepository.deleteById(id);
+	}
 
 }
