@@ -40,6 +40,22 @@ public class HomeController {
     	model.addAttribute("language", language);
         return "details.jsp";
     }
+    //edit language
+    @GetMapping("/languages/{id}/edit")
+    public String editLanguage(@PathVariable("id") Long id , Model model) {
+        Language language = languageService.getLanguageById(id);
+        model.addAttribute("language", language);
+        
+        return "edit.jsp";
+    }
+  //delete language
+    @GetMapping("/delete/{id}")
+    public String deleteLanguage(@PathVariable("id") Long id) {
+        System.out.println("languageId = "+ id);
+        languageService.delete(id);
+        return "redirect:/languages";
+    }
+       
     
     
 	
