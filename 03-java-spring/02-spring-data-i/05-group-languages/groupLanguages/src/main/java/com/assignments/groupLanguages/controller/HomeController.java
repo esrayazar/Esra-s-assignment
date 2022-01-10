@@ -23,20 +23,21 @@ public class HomeController {
 	public String getLanguages(Model model) {
 		List<Language> languages = languageService.getAllLanguages();
 		model.addAttribute("languages",languages);
-		
 		return "index.jsp";
-		
 		}
+	
 	 //create language
     @PostMapping("/languages")
-    public String createLanguages() {
+    public String createLanguages(Language language) {
+    	languageService.save(language);
         return "redirect:/languages";
         
     }
   //shows language details
     @GetMapping("/languages/{id}")
     public String getLanguagesid(@PathVariable("id") Long id,Model model) {
-       
+    	Language language = languageService.getLanguageById(id);
+    	model.addAttribute("language", language);
         return "details.jsp";
     }
     
