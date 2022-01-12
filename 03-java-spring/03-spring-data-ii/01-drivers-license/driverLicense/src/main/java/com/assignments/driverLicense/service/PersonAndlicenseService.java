@@ -5,12 +5,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.assignments.driverLicense.models.License;
 import com.assignments.driverLicense.models.Person;
 import com.assignments.driverLicense.repositories.LicenseRepository;
 import com.assignments.driverLicense.repositories.PersonRepository;
 
 @Service
-public class LicenseService {
+public class PersonAndlicenseService {
 	
 	@Autowired
 	private LicenseRepository licenseRepo;
@@ -27,5 +28,11 @@ public class LicenseService {
 		return personRepo.findById(id);
 	}
 	
+	public void saveLicense(License license ) {
+		licenseRepo.save(license);
+	}
+	public Optional<License> getLicense(Long id) {
+		return licenseRepo.findById(id);
+	}
 
 }
