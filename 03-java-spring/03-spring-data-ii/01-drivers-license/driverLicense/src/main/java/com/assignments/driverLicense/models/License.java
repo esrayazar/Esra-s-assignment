@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="license")
-public class license {
+public class License {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
@@ -41,7 +41,7 @@ public class license {
 	public void setExpirationDate(Date expirationDate) {
 		this.expirationDate = expirationDate;
 	}
-	public license() {
+	public License() {
 	}
 	
 	
