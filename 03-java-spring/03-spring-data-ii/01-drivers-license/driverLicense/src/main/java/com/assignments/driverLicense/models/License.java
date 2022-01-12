@@ -14,7 +14,7 @@ public class License {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
-	private String person;
+	private Long person_id;
 	private String state;
 	private Date expirationDate;
 	public Long getId() {
@@ -23,11 +23,11 @@ public class License {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getPerson() {
-		return person;
+	public Long getPerson() {
+		return person_id;
 	}
-	public void setPerson(String person) {
-		this.person = person;
+	public void setPerson(Long person_id) {
+		this.person_id = person_id;
 	}
 	public String getState() {
 		return state;
