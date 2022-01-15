@@ -1,5 +1,7 @@
 package com.assignments.dojosandninjas.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,10 @@ public class DojoService {
 
 	public void save(Dojo dojo) {
 		dojoRepo.save(dojo);
-		
+	}
+	
+	public List<Dojo> findAll(){
+		return dojoRepo.findAll();
 	}
 	
 
