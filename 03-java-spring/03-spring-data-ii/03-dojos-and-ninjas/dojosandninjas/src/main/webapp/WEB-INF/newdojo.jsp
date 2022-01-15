@@ -13,7 +13,7 @@
 <div class="container">
 <h1>New Dojo</h1>
 <div class="row">
-<form action="//dojos/new" method = "POST">
+<form action="/dojos/new" method = "POST">
   <div class="mb-3 row">
     <label for="name" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-3">
