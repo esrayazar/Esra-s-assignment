@@ -17,7 +17,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/dojos/new">New Dojo</a>
+      <a class="nav-item nav-link" href="/dojos/new">New Dojo</a>
       <a class="nav-item nav-link" href="/ninjas/new">New Ninja</a>
       <a class="nav-item nav-link" href="#">List</a>
     </div>
