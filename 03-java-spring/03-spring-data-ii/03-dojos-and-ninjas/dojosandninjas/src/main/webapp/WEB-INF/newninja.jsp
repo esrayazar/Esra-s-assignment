@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <%@ page isErrorPage="true" %>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +14,24 @@
 <body>
 <div class="container">
 <h1>New Ninja</h1>
+
 <div class="row">
 <form action="/ninjas/new" method = "POST">
+<div class="mb-3 row">
+    <label for="dojo" class="col-sm-2 col-form-label">Dojo</label>
+    <div class="col-sm-3">
+    <select class="form-control" name="dojos_id">
+    <option>Select a Dojo...</option>
+    <c:forEach items="${dojoList}" var="dojo">
+    <option value=${dojo.id}> ${dojo.name} </option>
+    </c:forEach>
+    </select>
+    </div>
+  </div>
   <div class="mb-3 row">
     <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id="firstName" name="firstName">
+      <input type="text" class="form-control" name="firstName"/>
     </div>
   </div>
   <div class="mb-3 row">
