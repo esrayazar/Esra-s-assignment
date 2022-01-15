@@ -30,6 +30,8 @@ public class Dojo {
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
+	
+	
 
 	public Long getId() {
 		return id;
