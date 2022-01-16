@@ -32,6 +32,10 @@ public class Ninja {
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="dojo_id")
+	private Dojo dojo;
 
 	@Override
 	public String toString() {
