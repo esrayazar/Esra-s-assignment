@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -30,6 +33,15 @@ public class Ninja {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
 	
+	
+	public Dojo getDojo() {
+		return dojo;
+	}
+
+	public void setDojo(Dojo dojo) {
+		this.dojo = dojo;
+	}
+
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
