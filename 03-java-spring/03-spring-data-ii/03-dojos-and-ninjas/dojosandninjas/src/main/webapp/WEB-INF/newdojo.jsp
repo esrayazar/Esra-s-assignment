@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <%@ page isErrorPage="true" %>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +32,9 @@
     <label for="name" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-3">
       <input type="text" class="form-control" id="name" name="name">
+      <c:if test = "${!error.equals('')}">
+         <c:out value = "${error}"/>
+      </c:if>
     </div>
   </div>
   <div class = "mb-3 row">
