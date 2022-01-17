@@ -23,8 +23,15 @@ public class ProjectService {
 		return projectRepo.save(newProject);
 	}
 	//Update
+	private Project updateProject(Project project) {
+		return projectRepo.save(project);
+	}
 	//Delete
+	private void deleteProject(Long id) {
+		projectRepo.deleteById(id);
+	}
 	//Project Details
+	
 	
 	
 }
