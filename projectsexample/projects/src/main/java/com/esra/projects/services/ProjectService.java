@@ -27,11 +27,14 @@ public class ProjectService {
 		return projectRepo.save(project);
 	}
 	//Delete
-	private void deleteProject(Long id) {
-		projectRepo.deleteById(id);
+	private void deleteProject(Long Id) {
+		projectRepo.deleteById(Id);
+	
 	}
-	//Project Details
+	//Details
 	
-	
+	private Project projectDetails(Long id) {
+		return projectRepo.findById(id).orElse(null);
+	}
 	
 }
