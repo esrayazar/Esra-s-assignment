@@ -19,7 +19,9 @@ public class ProjectService {
 		return projectRepo.findAll();
 	}
 	//Create
-	
+	private Project createProject(Project newProject) {
+		return projectRepo.save(newProject);
+	}
 	//Update
 	//Delete
 	//Project Details
