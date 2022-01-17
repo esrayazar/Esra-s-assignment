@@ -1,9 +1,12 @@
 package com.esra.projects.models;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -22,5 +25,8 @@ public class Project {
 	@Size(min=10, max=200, message="Description should be between 10-200")
 	private String description;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="student_id")
+	private Student student;
 
 }
