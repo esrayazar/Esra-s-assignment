@@ -1,11 +1,14 @@
 package com.esra.projects.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.esra.projects.models.Student;
 import com.esra.projects.services.ProjectService;
@@ -35,6 +38,7 @@ public class HomeController {
 		if (result.hasErrors()) {
 			return "/students/new.jsp";
 		}else {
+			sService.createStudent(student);
 			return "redirect:/";
 		}
 	}
