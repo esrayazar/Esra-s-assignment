@@ -15,13 +15,13 @@ public class StudentService {
 	private StudentRepository studentRepo;
 	
 	//Get All Students
-	private List<Student> getAllStudents(){
+	public List<Student> getAllStudents(){
 		return studentRepo.findAll();
 	}
 	
 	//Create New Student
 	
-	private Student createStudent(Student newStudent) {
+	public Student createStudent(Student newStudent) {
 		return studentRepo.save(newStudent);
 	}
 	

@@ -15,25 +15,25 @@ public class ProjectService {
 	private ProjectRepository projectRepo;
 
 	//Get All Project
-	private List<Project> getAllProjects(){
+	public List<Project> getAllProjects(){
 		return projectRepo.findAll();
 	}
 	//Create
-	private Project createProject(Project newProject) {
+	public Project createProject(Project newProject) {
 		return projectRepo.save(newProject);
 	}
 	//Update
-	private Project updateProject(Project project) {
+	public Project updateProject(Project project) {
 		return projectRepo.save(project);
 	}
 	//Delete
-	private void deleteProject(Long Id) {
+	public void deleteProject(Long Id) {
 		projectRepo.deleteById(Id);
 	
 	}
 	//Details
 	
-	private Project projectDetails(Long id) {
+	public Project projectDetails(Long id) {
 		return projectRepo.findById(id).orElse(null);
 	}
 	
