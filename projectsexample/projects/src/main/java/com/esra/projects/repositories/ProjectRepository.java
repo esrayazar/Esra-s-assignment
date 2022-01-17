@@ -9,7 +9,7 @@ import com.esra.projects.models.Project;
 
 public interface ProjectRepository extends CrudRepository<Project, Long> {
 	
-	//Get all student
+	//Get all project
 	List <Project> findAll();
 
 }
