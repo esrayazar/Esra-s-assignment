@@ -84,6 +84,13 @@ public String updateProject(@Valid @ModelAttribute("project") Project project, B
 	}
 }
 
+//delete
+@GetMapping("/projects/{id}/delete")
+public String deleteProject(@PathVariable("id") Long id) {
+	pService.deleteProject(id);
+	return "redirect:/";
+}
+
 
 
 
