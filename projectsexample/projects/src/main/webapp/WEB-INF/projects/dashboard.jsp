@@ -26,9 +26,15 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach items="${projects}" var= "projects">
+			<c:forEach items="${projects}" var= "project">
 			<tr>
 			<td>
+				<a href="/projects/${project.id}/details">
+				<c:out value="${project.projectName}"/>
+				</a>
+			</td>
+			<td>
+			
 			<c:out value="${project.student.firstName}"/>
 			</td>
 			<td>
@@ -36,8 +42,6 @@
 			<a href="/projects/{project.id}/delete">Delete</a>
 			</td>
 			</tr>
-			
-			
 			</c:forEach>
 			</tbody>
 		</table>
