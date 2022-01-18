@@ -15,11 +15,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.esra.auth.models.User;
 import com.esra.auth.services.UserService;
+import com.esra.auth.validator.UserValidator;
 
 @Controller
 public class HomeController {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private UserValidator userValidator;
 	
 	@GetMapping("/")
 	public String index(@ModelAttribute("user") User user) {
@@ -29,6 +32,8 @@ public class HomeController {
 	//register a user
 	@PostMapping("/registration")
 	public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult results, HttpSession session) {
+		userValidator.validate(user, results);
+		
 		if(results.hasErrors()) {
 			return "index.jsp";
 		}else {
