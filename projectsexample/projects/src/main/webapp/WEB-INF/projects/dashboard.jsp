@@ -20,6 +20,7 @@
 		<table class="table table-dark">
 			<thead>
 				<tr>
+					
 					<th>Project Name</th>
 					<th>Created By</th>
 					<th>Action</th>
@@ -38,8 +39,8 @@
 			<c:out value="${project.student.firstName}"/>
 			</td>
 			<td>
-			<a href="/projects/{project.id}/edit">Edit</a>
-			<a href="/projects/{project.id}/delete">Delete</a>
+			<a href="/projects/${project.id}/edit">Edit</a>
+			<a href="/projects/${project.id}/delete">Delete</a>
 			</td>
 			</tr>
 			</c:forEach>

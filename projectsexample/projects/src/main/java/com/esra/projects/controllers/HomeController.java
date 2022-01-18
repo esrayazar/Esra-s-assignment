@@ -75,8 +75,9 @@ public String editProject(@PathVariable("id") Long id, Model model) {
 
 //update
 @PutMapping("/projects/{id}/update")
-public String updateProject(@Valid @ModelAttribute("project") Project project, BindingResult result, Model model, @PathVariable("id") Long id) {
+public String updateProject(@Valid @ModelAttribute("editProject") Project project, BindingResult result, Model model, @PathVariable("id") Long id) {
 	if (result.hasErrors()) {
+		model.addAttribute("students", sService.getAllStudents());
 		return "/projects/edit.jsp";
 	}else {
 		pService.updateProject(project);
@@ -90,6 +91,14 @@ public String deleteProject(@PathVariable("id") Long id) {
 	pService.deleteProject(id);
 	return "redirect:/";
 }
+
+//details
+@GetMapping("/projects/{id}/details")
+public String details(@PathVariable("id") Long id, Model model) {
+	model.addAttribute("project",pService.projectDetails(id));
+	return "/projects/details.jsp";
+}
+
 
 
 

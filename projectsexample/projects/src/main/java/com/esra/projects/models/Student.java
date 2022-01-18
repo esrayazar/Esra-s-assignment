@@ -24,7 +24,7 @@ public class Student {
 	@Size(min=2, max=200, message="First Name should be between 2-200")
 	private String firstName;
 	@NotBlank
-	@Size(min=2, max=200, message="First Name should be between 2-200")
+	@Size(min=2, max=200, message="Last Name should be between 2-200")
 	private String lastName;
 	
 	@NotBlank
