@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.esra.projects.models.Project;
 import com.esra.projects.models.Student;
@@ -63,6 +65,27 @@ public String createProject(@Valid @ModelAttribute("project") Project project, B
 		return "redirect:/";
 	}
 }
+//Edit
+@GetMapping("/projects/{id}/edit")
+public String editProject(@PathVariable("id") Long id, Model model) {
+	model.addAttribute("editProject", pService.projectDetails(id));
+	model.addAttribute("students", sService.getAllStudents());
+	return "/projects/edit.jsp";
+}
+
+//update
+@PutMapping("/projects/{id}/update")
+public String updateProject(@Valid @ModelAttribute("project") Project project, BindingResult result, Model model, @PathVariable("id") Long id) {
+	if (result.hasErrors()) {
+		return "/projects/edit.jsp";
+	}else {
+		pService.updateProject(project);
+		return "redirect:/";
+	}
+}
+
+
+
 
 }
 	
