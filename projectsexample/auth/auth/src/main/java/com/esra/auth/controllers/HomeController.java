@@ -32,7 +32,7 @@ public class HomeController {
 			User newUser= userService.registerUser(user);
 			session.setAttribute("userId", newUser.getId());
 			
-			return "redirect:/projects";
+			return "projects.jsp";
 		}
 	}
 	
