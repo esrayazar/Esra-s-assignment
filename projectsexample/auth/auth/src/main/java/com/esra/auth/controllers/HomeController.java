@@ -46,11 +46,18 @@ public class HomeController {
 		if(userService.authenticateUser(email, password)) {
 			User user=userService.findByEmail(email);
 			session.setAttribute("userId", user.getId());
-			return "redirect:/projects";
+			return "projects.jsp";
 		}else {
 			redirectAttributes.addFlashAttribute("error","Invalid user/pass");
 			return "redirect:/";
 		}
+	}
+	
+	//Logout
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
 	}
 	
 	
