@@ -60,6 +60,19 @@ public class HomeController {
 		return "redirect:/";
 	}
 	
+	// *************************Project Routes*******************
+	
+	//Project Dashboard
+	@GetMapping("/projects")
+	public String projects(HttpSession session) {
+		if(session.getAttribute("userId")!=null) {
+			return "projects.jsp";
+		}else {
+			return "redirect:/";
+		}
+	}
+	
+	
 	
 	
 	
