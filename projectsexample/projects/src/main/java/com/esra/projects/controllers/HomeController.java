@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.esra.projects.models.Project;
 import com.esra.projects.models.Student;
 import com.esra.projects.services.ProjectService;
 import com.esra.projects.services.StudentService;
@@ -43,4 +44,26 @@ public class HomeController {
 		}
 	}
 
+
+
+//Project routes
+
+@GetMapping("/projects/new")
+public String newProject(@ModelAttribute("project") Project project, Model model) {
+	model.addAttribute("students",sService.getAllStudents());
+	return "/projects/new.jsp";
 }
+@PostMapping("/projects/create")
+public String createProject(@Valid @ModelAttribute("project") Project project, BindingResult result, Model model) {
+	if (result.hasErrors()) {
+		model.addAttribute("students", sService.getAllStudents());
+		return "/projects/new.jsp";
+	}else {
+		pService.createProject(project);
+		return "redirect:/";
+	}
+}
+
+}
+	
+		
