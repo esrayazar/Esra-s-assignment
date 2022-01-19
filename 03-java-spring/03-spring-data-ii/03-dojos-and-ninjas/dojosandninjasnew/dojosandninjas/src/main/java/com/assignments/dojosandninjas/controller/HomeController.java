@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,11 +19,12 @@ public class HomeController {
 private DojoService dojoService;
 
 @GetMapping("/")
-public String index() {
+public String index(Model model) {
+	model.addAttribute("newDojo", this.dojoService.getAllDojos());
 	return "index.jsp";
 }
 @GetMapping("/dojos/new")
-public String createDojoDisplay() {
+public String createDojoDisplay(@ModelAttribute("dojo") Dojo dojo) {
 	return "newdojo.jsp";
 }
 
