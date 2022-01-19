@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -23,6 +24,7 @@ public class Dojo {
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotBlank
 	@NotNull
 	@Size(min=2, max=20, message="Name should be between 2-20 characters")
 	private String name;
@@ -75,6 +77,17 @@ public class Dojo {
 
 	public void setNinjas(List<Ninja> ninjas) {
 		this.ninjas = ninjas;
+	}
+
+	public Dojo(@NotNull @Size(min = 2, max = 20, message = "Name should be between 2-20 characters") String name,
+			List<Ninja> ninjas) {
+		super();
+		this.name = name;
+		this.ninjas = ninjas;
+	}
+
+	public Dojo() {
+		
 	}
 	
 	
