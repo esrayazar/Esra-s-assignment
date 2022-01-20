@@ -28,10 +28,7 @@ public class NinjaController {
 	
 	@GetMapping("/ninjas/new")
 	public String addNinja(
-			@ModelAttribute("newNinja") Ninja newNinja,
-			Model model
-			) {
-//		List<Dojos> allDojos = this.dService.getAllDojos();
+			@ModelAttribute("newNinja") Ninja newNinja,Model model) {
 		model.addAttribute("ninjas", nService.getAllNinjas());
 		model.addAttribute("allDojos", dService.getAllDojos());
 		return "newninja.jsp";
