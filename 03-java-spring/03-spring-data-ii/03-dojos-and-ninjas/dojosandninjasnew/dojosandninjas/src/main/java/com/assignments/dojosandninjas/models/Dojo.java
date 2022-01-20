@@ -3,6 +3,7 @@ package com.assignments.dojosandninjas.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,7 +30,7 @@ public class Dojo {
 	@Size(min=2, max=20, message="Name should be between 2-20 characters")
 	private String name;
 	
-	@OneToMany(mappedBy="dojo", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="dojo",cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Ninja> ninjas;
 	
 	@Column(updatable=false)
