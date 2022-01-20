@@ -81,9 +81,18 @@ public class HomeController {
 	
 	@DeleteMapping("/delete/{id}")
     public String delete(@PathVariable("id") Long id) {
+		System.out.println(">>>>>> "+id);
 		dojoService.deleteDojo(id);
         return "redirect:/";
     }
+	
+	//Display Details Page
+	
+	@GetMapping("/dojos/{id}")
+	public String displaydetail(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("dojo", this.dojoService.getOneDojo(id));
+		return "display.jsp";
+	}
 
 
 }
