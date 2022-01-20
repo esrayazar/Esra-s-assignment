@@ -31,7 +31,7 @@ public class Student {
 	@Size(min = 2, max = 40, message = "Last Name should be between 2-40 chars")
 	private String lastName;
 	
-	private int age;
+	private Long age;
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -67,11 +67,13 @@ public class Student {
 		this.lastName = lastName;
 	}
 
-	public int getAge() {
+	
+
+	public Long getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Long age) {
 		this.age = age;
 	}
 
