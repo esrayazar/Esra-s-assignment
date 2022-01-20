@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.assignments.dojosandninjas.models.Dojo;
@@ -39,5 +40,15 @@ public String create(@Valid @ModelAttribute("dojo") Dojo dojo, BindingResult res
 		return "redirect:/";
 	}
 }
+
+@GetMapping("/edit/{id}")
+public String edit(@PathVariable("id") Long id,@ModelAttribute("dojo") Dojo dojo, Model model){
+	model.addAttribute("dojo",this.dojoService.getOneDojo(id));
+	return "edit.jsp";
+	
+}
+
+
+
 
 }
