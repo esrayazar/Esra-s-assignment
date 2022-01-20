@@ -12,30 +12,40 @@
 <title>Insert title here</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/dojos/new">New Dojo</a>
+      <a class="nav-item nav-link" href="/ninjas/new">New Ninja</a>
+    </div>
+  </div>
+</nav>
 <div class="container">
-
 <h1>All Dojos</h1>
-  <a href="/dojos/new">New Dojo</a>
-    <a href="/ninjas/new">New Ninja</a>
     <table class="table table-dark">
     <thead>
         <tr>
             <th>Dojo</th>
             <th>Action</th>
-            <th></th>
+            <th>List</th>
         </tr>
     </thead>
         <tbody>
         <c:forEach items="${newDojo}" var="dojo">
 	        <tr>
-	            <td><a href="/details/${dojo.id}"><c:out value="${dojo.name}"/></a></td>
+	            <td><a href="/dojos/${dojo.id}"><c:out value="${dojo.name}"/></a></td>
 	            <td>
 	        <form action="/delete/${dojo.id}" method="post">
 			    <input type="hidden" name="_method" value="delete">
-			    <input type="submit" value="Delete">
+			    <button type="submit" class="btn btn-outline-primary" value="Delete">Delete</button>
+			    <a class="btn btn-outline-primary" href="/edit/${dojo.id}">Edit</a>
 			</form>
 			</td>
-			<td><a href="/edit/${dojo.id}"><button>Edit</button></a></td>
+			<td><a class="btn btn-outline-primary" href="/dojos/${dojo.id}">Display</a></td>
 	        </tr>
 	        </c:forEach>
 	        
