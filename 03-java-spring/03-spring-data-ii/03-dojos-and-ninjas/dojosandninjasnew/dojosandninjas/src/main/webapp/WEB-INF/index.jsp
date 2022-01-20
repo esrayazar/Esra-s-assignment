@@ -22,6 +22,7 @@
         <tr>
             <th>Dojo</th>
             <th>Action</th>
+            <th></th>
         </tr>
     </thead>
         <tbody>
@@ -34,23 +35,12 @@
 			    <input type="submit" value="Delete">
 			</form>
 			</td>
-			<td><a href="/dojo/edit/${dojo.id}"><button>Edit</button></a></td>
+			<td><a href="/edit/${dojo.id}"><button>Edit</button></a></td>
 	        </tr>
 	        </c:forEach>
 	        
     </tbody>
 </table>
- <%--    <h1>New Dojo</h1>
-	<form:form action="/dojos/new" method="post" modelAttribute="dojo">
-	    <p>
-	        <form:label path="newDojo">Dojo:</form:label>
-	        <form:errors path="newDojo"/>
-	        <form:input path="newDojo"/>
-	    </p>
-	    <input type="submit" value="Submit"/>
-	</form:form>  
-	
-</div>
-<a href="/ninjas/"><button>Add Ninja</button></a> --%>
+ 
 </body>
 </html>
