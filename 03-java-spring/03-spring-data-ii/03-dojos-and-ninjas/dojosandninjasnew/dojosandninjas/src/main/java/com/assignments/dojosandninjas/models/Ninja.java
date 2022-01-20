@@ -19,6 +19,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name="ninjas")
 public class Ninja {
 	
+
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private Long id;
