@@ -15,16 +15,28 @@
 <title>Insert title here</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/dojos/new">New Dojo</a>
+      <a class="nav-item nav-link" href="/ninjas/new">New Ninja</a>
+    </div>
+  </div>
+</nav>
 <div class="container">
-	<h1>Create New Project</h1>
-	
+	<h1>Create New Ninja</h1>
 	<form:form action="/ninjas/new" method="post" modelAttribute="newNinja">
 	<div class="form-group">
 	       <form:label path="dojo">Dojo</form:label>
 		        <form:errors path="dojo"/>
 		        <form:select class="form-control" path="dojo">
+		        <option value="">Choose a location</option>
 		        <c:forEach items="${ allDojos }" var="dojo">
-		        	<option value="${ dojo.id }">${ dojo.name }</option>
+		        	<option value="${ dojo.id }">${ dojo.name } Location</option>
 		        </c:forEach>
 		        </form:select>
 		  </div>
@@ -41,8 +53,7 @@
 	     <div class="form-group">
 	       <form:label path="age">Age</form:label>
 		   <form:errors path="age"/>
-		   <form:input class="form-control"  path="age"/>
-		  
+		   <form:input class="form-control"  path="age" value=" "/>
 		    
 		  </div>
 	    <p><button>Create</button>
