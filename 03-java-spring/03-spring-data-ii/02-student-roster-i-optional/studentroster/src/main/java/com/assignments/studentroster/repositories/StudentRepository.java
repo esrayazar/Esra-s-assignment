@@ -12,4 +12,5 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
 
 //	Get list of Users 
 	List<Student> findAll();
+	
 }

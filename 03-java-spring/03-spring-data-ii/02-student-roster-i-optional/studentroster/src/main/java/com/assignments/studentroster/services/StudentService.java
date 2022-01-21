@@ -21,6 +21,9 @@ public class StudentService {
 		public Student create(Student newStudent) {
 			return this.sRepo.save(newStudent);
 		}
+		public Student findById(long studentId) {
+			return this.sRepo.findById(studentId).get();
+		}
 		
 
 }
