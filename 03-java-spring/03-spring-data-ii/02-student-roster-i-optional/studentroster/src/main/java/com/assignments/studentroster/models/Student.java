@@ -100,6 +100,19 @@ public class Student {
 	public void setContactInfo(ContactInfo contactInfo) {
 		this.contactInfo = contactInfo;
 	}
+
+	public Student(
+			@NotNull @Size(min = 3, max = 20, message = "First Name should be between 3-20 chars") String firstName,
+			@Size(min = 2, max = 40, message = "Last Name should be between 2-40 chars") String lastName, Long age) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+	}
+
+	public Student() {
+		super();
+	}
 	
 	
 
