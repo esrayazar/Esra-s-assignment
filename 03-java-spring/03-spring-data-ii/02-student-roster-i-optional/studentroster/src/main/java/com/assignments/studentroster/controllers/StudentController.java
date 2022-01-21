@@ -66,6 +66,7 @@ public class StudentController {
 		return "/student/allstudents.jsp";	
 	}
 	
+	// /students/create?firstName=John&lastName=Doe&age=35
 	@GetMapping("/students/create")
 	public String createStudent(@RequestParam String firstName, @RequestParam String lastName, @RequestParam Long age) { 
 		Student student = new Student(firstName,lastName,age);
@@ -73,7 +74,7 @@ public class StudentController {
 		return "redirect:/students";	
 	}
 	
-	//contacts/create?student=1&address=1234%20Some%20Street&city=Los%20Angeles&state=CA
+	// /contacts/create?student=1&address=1234%20Some%20Street&city=Los%20Angeles&state=CA
 	// Make sure to change student=??? to a new student id
 	@GetMapping("/contacts/create")
 	public String createContact(@RequestParam Long student, @RequestParam String address , @RequestParam String city, @RequestParam String state) { 
