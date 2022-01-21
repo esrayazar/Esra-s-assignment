@@ -113,6 +113,10 @@ public class Student {
 	public Student() {
 		super();
 	}
+
+	public Student(Long student_id) {
+		this.id = student_id;
+	}
 	
 	
 
