@@ -15,7 +15,7 @@ public class StudentService {
 	
 //	Get me all Users 
 	public List<Student> getAllStudents(){
-		return this.sRepo.findAll();
+		return sRepo.findAll();
 	}
 //Create User 
 		public Student create(Student newStudent) {
