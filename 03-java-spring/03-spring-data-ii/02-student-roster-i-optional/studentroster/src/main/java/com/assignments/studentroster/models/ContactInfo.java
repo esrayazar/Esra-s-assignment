@@ -20,8 +20,8 @@ public class ContactInfo {
     private Long id;
 	
 	@NotNull
-	@Size(min = 20, max = 200, message = "Adress should be between 20-200 chars")
-	private String adress;
+	@Size(min = 5, max = 200, message = "Address should be between 5-200 chars")
+	private String address;
 	@NotNull
 	@Size(min = 2, max = 40, message = "city between 2-400 chars")
 	private String city;
@@ -41,12 +41,13 @@ public class ContactInfo {
 		this.id = id;
 	}
 
-	public String getAdress() {
-		return adress;
+
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getCity() {
@@ -70,6 +71,21 @@ public class ContactInfo {
 	}
 
 	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public ContactInfo() {
+		super();
+	}
+
+	public ContactInfo(
+			@NotNull @Size(min = 5, max = 200, message = "Address should be between 5-200 chars") String address,
+			@NotNull @Size(min = 2, max = 40, message = "city between 2-400 chars") String city,
+			@NotNull @Size(min = 2, max = 40, message = "state between 2-400 chars") String state, Student student) {
+		super();
+		this.address = address;
+		this.city = city;
+		this.state = state;
 		this.student = student;
 	}
 
