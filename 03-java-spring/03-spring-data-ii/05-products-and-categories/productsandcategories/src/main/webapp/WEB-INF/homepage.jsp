@@ -31,7 +31,13 @@
         <c:forEach items="${Products}" var="Product">
         <tr>
             <td><c:out value="${Product.name}"/></td>
-             <td><c:out value="${Category.name}"/></td>
+             <td>
+             <c:forEach items="${Product.categories}" var="category">
+				<p>- ${category.name}</p>
+			</c:forEach>
+             <c:out value="${Category.name}"/>
+             
+             </td>
             <td>
                <form action="/delete/${User.id}" method="post">
 					    <input type="hidden" name="_method" value="delete">
