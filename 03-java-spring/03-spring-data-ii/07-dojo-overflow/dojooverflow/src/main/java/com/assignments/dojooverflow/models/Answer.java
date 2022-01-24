@@ -33,7 +33,7 @@ public class Answer {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="question_id")
-private Question question;
+	private Question question;
 
 	public Long getId() {
 		return id;
@@ -77,6 +77,12 @@ private Question question;
 
 	public Answer() {
 		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Answer [id=" + id + ", answer=" + answer + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt
+				+ ", question=" + question + "]";
 	}
 	
 	
