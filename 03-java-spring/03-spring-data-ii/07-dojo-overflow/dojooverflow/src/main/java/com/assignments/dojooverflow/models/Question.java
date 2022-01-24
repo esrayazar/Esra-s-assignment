@@ -14,9 +14,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -34,10 +37,14 @@ public class Question {
 	@DateTimeFormat(pattern ="yyy-MM-DD HH:mm:ss")
 	private Date updatedAt;
 	
+	@Transient
+	private String temptags;
+	
 	@OneToMany(mappedBy="question",fetch=FetchType.LAZY)
 	private List<Answer> answers;
 	
 	@ManyToMany(fetch=FetchType.LAZY)
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
 	@JoinTable(
 			name="tags_questions",
 			joinColumns=@JoinColumn(name="question_id"),
@@ -97,5 +104,20 @@ private List <Tag> tags;
 		super();
 	}
 
+	public String getTemptags() {
+		return temptags;
+	}
+
+	public void setTemptags(String temptags) {
+		this.temptags = temptags;
+	}
+
+	@Override
+	public String toString() {
+		return "Question [id=" + id + ", question=" + question + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt
+				+ ", temptags=" + temptags + ", answers=" + answers + ", tags=" + tags + "]";
+	}
+
+	
 	
 }
