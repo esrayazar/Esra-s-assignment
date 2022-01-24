@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.assignments.dojooverflow.models.Answer;
+
 import com.assignments.dojooverflow.models.Question;
 import com.assignments.dojooverflow.models.Tag;
 import com.assignments.dojooverflow.repositories.QuestionRepository;
