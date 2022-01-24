@@ -15,27 +15,43 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="container">
 <h1><c:out value ="${question.question}"/></h1>
-<p>
-<c:forEach items="${question.tags}" var="tag">
+<div class="row">
+<h3 class="my-3">Tags:</h3>
+
+<span><c:forEach items="${question.tags}" var="tag">
 				${tag.subject}
-				</c:forEach>
-</p>
-<p>
+				</c:forEach></span>
+</div>
+<div class="row mt-3">
+			<div class="col mx-3">
+<table class="table table-striped border border-dark">
+<thead>
+<tr>
+	<th>Answer</th>
+</tr>
+</thead>
+<tbody>
 <c:forEach items="${question.answers}" var="answer">
 				${answer.answer}
 				</c:forEach>
-</p>
-
+</tbody>
+</table>
+</div>
+<div class="col mx-3">
+<h3>Add your answer:</h3>
 <form:form action="/questions/save" method="post" modelAttribute="newAnswer">
-	<div class="form-group">
+		<div class="form-group row">
 		<form:label path="answer">Answer</form:label>
 		<form:errors path="answer"/>
 		<form:textarea class="form-control" path="answer"/>
 		<form:hidden path="question" value="${question.id}"/>
 	</div>
-	<button>Submit</button>
+	<button class="btn btn-warning  my-2">Answer it!</button>
 	</form:form>
-
+	</div>
+	
+</div>
 </body>
 </html>
