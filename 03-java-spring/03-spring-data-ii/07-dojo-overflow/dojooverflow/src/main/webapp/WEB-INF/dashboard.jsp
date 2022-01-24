@@ -18,7 +18,7 @@
 <body>
 	<div class="container">
 		<h1>Question Dashboard</h1>
-		<table class="table table-dark">
+		<table class="table table-striped border border-dark">
 			<thead>
 				<tr>
 					<th>Question</th>
